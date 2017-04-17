@@ -193,12 +193,13 @@ function plugin(schema, options) {
     increment: options.increment || 1,
     prefix: options.prefix || '',
     suffix: options.suffix || '',
+    type: options.type || Number,
   };
 
   const fieldSchema = {};
 
   fieldSchema[opts.field] = {
-    type: String,
+    type: opts.type,
     require: true,
     unique: true,
   };
